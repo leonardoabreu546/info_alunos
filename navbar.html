@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Navbar InfoAlunos</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f5f5f5;
+    }
+
+    .top-bar {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 32px;
+        background-color: #003366;
+        color: #fff;
+    }
+
+    .top-left {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .top-left img {
+        width: 60px;
+    }
+
+    .top-left h1 {
+        font-size: 21px;
+        font-weight: 400;
+        margin: 0;
+    }
+
+    .user-options {
+        display: flex;
+        gap: 16px;
+    }
+
+    .user-options a {
+        padding: 5px 10px;
+        color: #fff;
+        text-decoration: none;
+        transition: background 0.2s ease;
+        border-radius: 4px;
+    }
+
+    .user-options a:hover {
+        background: rgba(255, 255, 255, 0.15);
+    }
+
+    .user-photo {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #ccc;
+        margin-left: 16px;
+    }
+</style>
+</head>
+
+<body>
+
+    <div class="top-bar">
+        <div class="top-left">
+            <img src="logo_uma_branco.png" alt="Logo UMA" />
+            <h1>InfoAlunos - Serviço de Informação dos Alunos</h1>
+        </div>
+
+        <div style="display:flex; align-items:center;">
+            <div class="user-options">
+                <a href="#">O meu correio</a>
+                <a href="#">O meu horário</a>
+                <a href="#">Matrículas/Inscrições</a>
+            </div>
+
+            <div class="user-photo"></div>
+        </div>
+    </div>
+
+</body>
+</html>
