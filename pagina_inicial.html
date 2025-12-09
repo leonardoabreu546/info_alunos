@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InfoAlunos - Página Inicial</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+
+            --bg: #f5f5f5;
+            --bg-dark: #121212;
+
+            --surface: #fff;
+            --surface-dark: #1f1f1f;
+
+            --surface2: #e9e9e9;
+            --surface2-dark: #1a1a1a;
+
+            --surface3-dark: #262626;
+
+            --text: #000;
+            --text-dark: #e5e5e5;
+
+            --text-muted-dark: #ccc;
+
+            --primary: #003366;
+            --primary-dark: #4da3ff;
+
+            --border: #ccc;
+            --border-dark: #444;
+
+            --border-strong-dark: #333;
+
+            --table-header: #ddd;
+            --table-header-dark: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: Arial, sans-serif;
+            overflow-x: hidden; 
+        }
+
+        #menu-toggle {
+            display: none;
+        }
+
+        .menu-btn {
+            display: none;
+            cursor: pointer;
+            font-size: 18px;
+            color: #fff;
+            background: var(--primary);
+            padding: 8px 12px;
+            border-radius: 4px;
+            margin: 16px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1100;
+        }
+
+        .top-bar {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 32px;
+            background-color: var(--primary);
+            color: #fff;
+        }
+
+        .top-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .top-left img {
+            width: 60px;
+        }
+
+        .top-left h1 {
+            font-size: 21px;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        .user-options {
+            display: flex;
+            gap: 16px;
+        }
+
+        .user-options a {
+            padding: 5px 10px;
+            color: #fff;
+        }
+
+        .user-photo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #ccc;
+            margin-left: 16px;
+        }
+
+        .container {
+            display: flex;
+            padding: 32px;
+            gap: 24px;
+        }
+
+        .sidebar {
+            background: var(--surface2);
+            padding: 24px;
+            border-radius: 8px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .inicio-link a {
+            display: block;
+            padding: 10px 13px;
+            font-weight: bold;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .inicio-link a::before {
+            content: "▶";
+            color: var(--primary);
+            margin-right: 6px;
+            display: inline-block;
+        }
+
+        .sidebar details {
+            margin: 6px 0;
+        }
+
+        .sidebar summary {
+            padding: 10px 13px;
+            font-weight: bold;
+        }
+
+        .sidebar summary::marker {
+            content: "▶ ";
+            color: var(--primary);
+        }
+
+        .sidebar details[open] summary::marker {
+            content: "▼ ";
+        }
+
+        .sidebar details ul li {
+            padding: 8px 13px;
+            margin: 5px 0;
+            border-radius: 7px;
+            background: var(--surface);
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+            transition: background-color 0.3s ease;
+            border: 1px solid var(--border);
+        }
+
+        .sidebar details ul li:hover {
+            background-color: rgba(0, 51, 102, 0.1);
+        }
+
+        .main {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .row {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            flex: 1;
+            background: var(--surface);
+            padding: 16px;
+            border-radius: 8px;
+        }
+
+        .box h2 {
+            margin-top: 0;
+            font-size: 18px;
+        }
+
+        .scroll-table {
+            max-height: 192px;
+            overflow-y: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--surface);
+            color: var(--text);
+        }
+
+        table th, table td {
+            border: 1px solid var(--border);
+            padding: 8px 12px;
+            text-align: left;
+        }
+
+        table th {
+            background: var(--table-header);
+        }
+
+        @media (max-width: 360px) {
+            .menu-btn {
+                display: inline-block;
+            }
+
+            .sidebar {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 80%;
+                height: 100%;
+                background: var(--surface2-dark);
+                color: var(--text-dark);
+                padding: 16px;
+                overflow-y: auto;
+                z-index: 1000;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+
+            #menu-toggle:checked ~ .container .sidebar {
+                display: block;
+                transform: translateX(0);
+            }
+
+            .main {
+                width: 100%;
+                padding: 16px;
+            }
+
+            .top-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 12px 16px;
+            }
+
+            .top-left {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .top-left img {
+                width: 40px;
+            }
+
+            .top-left h1 {
+                font-size: 16px;
+                text-align: left;
+            }
+
+            .user-options {
+                flex-direction: column;
+                gap: 8px;
+                margin-top: 8px;
+            }
+
+            .user-photo {
+                margin-left: 0;
+                margin-top: 8px;
+                width: 40px;
+                height: 40px;
+            }
+
+            .container {
+                flex-direction: column;
+                padding: 16px;
+                gap: 16px;
+            }
+
+            .row {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .box {
+                padding: 12px;
+                overflow-x: auto;
+            }
+
+            table th, table td {
+                font-size: 12px;
+                padding: 6px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Checkbox + Botão Hamburger -->
+    <input type="checkbox" id="menu-toggle" hidden>
+    <label for="menu-toggle" class="menu-btn">☰ Menu</label>
+
+    <div class="top-bar">
+        <div class="top-left">
+            <img src="logo_uma_branco.png" alt="Logo UMA" />
+            <h1>InfoAlunos - Serviço de Informação dos Alunos</h1>
+        </div>
+        <div class="user-options">
+            <a href="#">O meu correio</a>
+            <a href="#">O meu horário</a>
+            <a href="#">Matrículas/Inscrições</a>
+        </div>
+        <div class="user-photo"></div>
+    </div>
+
+    <div class="container">
+        <div class="sidebar">
+            <ul>
+                <li class="inicio-link"><a href="pagina_inicial.html">Início</a></li>
+                <details>
+                    <summary>Geral</summary>
+                    <ul>
+                        <li>Processos</li>
+                        <li>Dados pessoais</li>
+                        <li>Privacidade</li>
+                        <li>Ajuda</li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>Serviços</summary>
+                    <ul>
+                        <li>Pagamentos</li>
+                        <li>Matrículas/Inscrições</li>
+                        <li>Inscrição em turmas</li>
+                        <li>Requerimentos</li>
+                        <li>Cartão universitário</li>
+                        <li>SASUMa - Bolsas</li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>Concursos</summary>
+                    <ul>
+                        <li>Candidaturas</li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>Avaliação</summary>
+                    <ul>
+                        <li>Pautas</li>
+                        <li>Reclamação de nota</li>
+                        <li>Inquéritos</li>
+                        <li>Resultados de inquéritos</li>
+                        <li>Inquérito RAIDES</li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>Creditações</summary>
+                    <ul>
+                        <li>Lista de processos</li>
+                        <li>Novo processo</li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>Documentos</summary>
+                    <ul>
+                        <li>Académicos</li>
+                        <li>Declarações</li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>Aula</summary>
+                    <ul>
+                        <li>Calendário</li>
+                        <li>Sumários</li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>Disciplina</summary>
+                    <ul>
+                        <li>Ficha</li>
+                        <li>Programa</li>
+                        <li>Ficheiros</li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>Curso</summary>
+                    <ul>
+                        <li>Ficha curricular</li>
+                        <li>Horários</li>
+                        <li>Histórico de matrículas/inscrições</li>
+                        <li>Histórico de disciplinas aprovadas</li>
+                        <li>Transição para Bolonha</li>
+                        <li>Plano de conclusão</li>
+                        <li>Quadro de prescrição</li>
+                        <li>Atividades académicas do aluno</li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>Instituição</summary>
+                    <ul>
+                        <li>Estrutura orgânica</li>
+                    </ul>
+                </details>
+            </ul>
+        </div>
+
+        <div class="main">
+            <div class="row">
+                <div class="box">
+                    <h2>Últimas pautas</h2>
+                    <p>(Sem dados para já)</p>
+                </div>
+                <div class="box">
+                    <h2>Pagamentos por liquidar</h2>
+                    <p>Entidade multibanco: exemplo</p>
+                    <div class="scroll-table">
+                        <table>
+                            <tr>
+                                <th>Ref Multibanco</th>
+                                <th>Valor</th>
+                                <th>Limite Pagamento</th>
+                                <th>Prestação</th>
+                            </tr>
+                            <tr>
+                                <td>212222501</td>
+                                <td>77,44€</td>
+                                <td>2025-09-30</td>
+                                <td>1ª Prestação de Propinas de CET's</td>
+                            </tr>
+                            <tr>
+                                <td>212222502</td>
+                                <td>77,44€</td>
+                                <td>2025-10-31</td>
+                                <td>2ª Prestação de Propinas de CET's</td>
+                            </tr>
+                            <tr>
+                                <td>212222503</td>
+                                <td>77,44€</td>
+                                <td>2025-11-30</td>
+                                <td>3ª Prestação de Propinas de CET's</td>
+                            </tr>
+                            <tr>
+                                <td>212222504</td>
+                                <td>77,44€</td>
+                                <td>2025-12-31</td>
+                                <td>4ª Prestação de Propinas de CET's</td>
+                            </tr>
+                            <tr>
+                                <td>212222505</td>
+                                <td>77,44€</td>
+                                <td>2026-01-31</td>
+                                <td>5ª Prestação de Propinas de CET's</td>
+                            </tr>
+                            <tr>
+                                <td>212222506</td>
+                                <td>77,44€</td>
+                                <td>2026-02-28</td>
+                                <td>6ª Prestação de Propinas de CET's</td>
+                            </tr>
+                            <tr>
+                                <td>212222507</td>
+                                <td>77,44€</td>
+                                <td>2026-03-31</td>
+                                <td>7ª Prestação de Propinas de CET's</td>
+                            </tr>
+                            <tr>
+                                <td>212222508</td>
+                                <td>77,44€</td>
+                                <td>2026-04-30</td>
+                                <td>8ª Prestação de Propinas de CET's</td>
+                            </tr>
+                            <tr>
+                                <td>212222509</td>
+                                <td>77,44€</td>
+                                <td>2026-05-31</td>
+                                <td>9ª Prestação de Propinas de CET's</td>
+                            </tr>
+                            <tr>
+                                <td>212222510</td>
+                                <td>77,48€</td>
+                                <td>2026-06-30</td>
+                                <td>10ª Prestação de Propinas de CET's</td>
+                            </tr>
+                            <tr>
+                                <td>212222513</td>
+                                <td>15,00€</td>
+                                <td>2025-10-13</td>
+                                <td>Coima - Até 15 dias seguidos após o termo do prazo</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="text-align:right;font-weight:bold;">Total:</td>
+                                <td colspan="2" style="font-weight:bold;">634,56€</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <h2>Lista de processos do aluno</h2>
+                <table>
+                    <tr>
+                        <th>Entrada</th>
+                        <th>Processo</th>
+                        <th>Saída</th>
+                        <th>Despacho</th>
+                    </tr>
+                    <tr>
+                        <td>2025-10-10</td>
+                        <td>Reclamação</td>
+                        <td>2025-10-15</td>
+                        <td>Em análise</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="box" style="margin-top:16px;">
+                <h2>Avisos</h2>
+                <p>(sem avisos)</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
