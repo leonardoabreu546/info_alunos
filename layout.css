@@ -1,0 +1,95 @@
+@media (max-width: 360px) {
+
+    /* Botão do menu aparece */
+    .menu-btn {
+        display: inline-block;
+    }
+
+    /* Sidebar inicialmente escondido e deslizando da esquerda */
+    .sidebar {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 80%;
+        height: 100%;
+        background: var(--surface2);
+        color: var(--text);
+        padding: 16px;
+        overflow-y: auto;
+        z-index: 1000;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    /* Checkbox controla se o sidebar aparece */
+    #menu-toggle:checked ~ .container .sidebar {
+        display: block;
+        transform: translateX(0);
+    }
+
+    /* Main ocupa 100% da largura */
+    .main {
+        width: 100%;
+        padding: 8px;
+    }
+
+    /* Container flex vertical */
+    .container {
+        flex-direction: column;
+        padding: 8px;
+        gap: 8px;
+    }
+
+    /* Top bar empilhada */
+    .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 16px;
+    }
+
+    .top-left {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .top-left img {
+        width: 40px;
+    }
+
+    .top-left h1 {
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .user-options {
+        flex-direction: column;
+        gap: 6px;
+        margin-top: 8px;
+    }
+
+    .user-photo {
+        margin-left: 0;
+        margin-top: 8px;
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Rows e boxes ficam verticais */
+    .row {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .box {
+        padding: 12px;
+        overflow-x: auto;
+    }
+
+    /* Tabelas mais compactas */
+    table th, table td {
+        font-size: 12px;
+        padding: 6px;
+    }
+}
