@@ -1,95 +1,58 @@
-@media (max-width: 360px) {
-
-    /* Botão do menu aparece */
-    .menu-btn {
-        display: inline-block;
+@media (max-width: 800px) {
+    .container {
+        flex-direction: column !important;
+        padding: 12px !important;
     }
 
-    /* Sidebar inicialmente escondido e deslizando da esquerda */
+    .row {
+        flex-direction: column !important;
+        gap: 12px !important;
+    }
+
     .sidebar {
-        display: none;
         position: fixed;
         top: 0;
-        left: 0;
-        width: 80%;
-        height: 100%;
-        background: var(--surface2);
-        color: var(--text);
-        padding: 16px;
+        left: -260px;
+        width: 240px;
+        height: 100vh;
         overflow-y: auto;
-        z-index: 1000;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
+        background: var(--surface2);
+        padding: 24px;
+        transition: left 0.3s ease;
+        z-index: 1500;
+        border-radius: 0;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.4);
     }
-
-    /* Checkbox controla se o sidebar aparece */
-    #menu-toggle:checked ~ .container .sidebar {
+    
+    .menu-btn {
         display: block;
-        transform: translateX(0);
+        position: relative;
+        width: 100px;
     }
 
-    /* Main ocupa 100% da largura */
-    .main {
-        width: 100%;
-        padding: 8px;
+    #menu-toggle:checked ~ .container .sidebar {
+        left: 0;
     }
-
-    /* Container flex vertical */
-    .container {
-        flex-direction: column;
-        padding: 8px;
-        gap: 8px;
-    }
-
-    /* Top bar empilhada */
+    
     .top-bar {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 8px 16px;
-    }
-
-    .top-left {
+        padding: 12px;
         flex-direction: column;
         align-items: flex-start;
         gap: 8px;
-    }
-
-    .top-left img {
-        width: 40px;
-    }
-
-    .top-left h1 {
-        font-size: 16px;
         text-align: left;
     }
 
-    .user-options {
-        flex-direction: column;
-        gap: 6px;
-        margin-top: 8px;
-    }
-
-    .user-photo {
-        margin-left: 0;
-        margin-top: 8px;
-        width: 40px;
-        height: 40px;
-    }
-
-    /* Rows e boxes ficam verticais */
-    .row {
-        flex-direction: column;
-        gap: 12px;
+    .top-left h1 {
+        font-size: 21px;
     }
 
     .box {
-        padding: 12px;
-        overflow-x: auto;
+        width: 100%;
     }
 
-    /* Tabelas mais compactas */
-    table th, table td {
-        font-size: 12px;
-        padding: 6px;
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
     }
 }
