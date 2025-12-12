@@ -1,4 +1,19 @@
 @media (max-width: 800px) {
+    .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.4);
+    z-index: 1400;
+}
+
+    #menu-toggle:checked ~ .overlay {
+    display: block;
+}
+
     .container {
         flex-direction: column !important;
         padding: 12px !important;
