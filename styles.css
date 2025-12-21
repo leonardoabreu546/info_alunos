@@ -111,6 +111,33 @@ body {
     font-size: 18px;
 }
 
+.box-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 13px;
+    color: #88888F;
+}
+
+.edit{
+    font-weight: normal;
+    font-size: 13px;
+    color: #88888F;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.box-content{
+    display: flex;
+    justify-content: space-between; 
+}
+
+.box-color {
+    background-color: #EEEEEE;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
 .scroll-table {
     max-height: 192px;
     overflow-y: auto;
@@ -134,3 +161,5 @@ table th, table td {
 table th {
    background: var(--table-header);
 }
+
+
