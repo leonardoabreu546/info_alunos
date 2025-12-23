@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InfoAlunos - Página Inicial</title>
+    <link rel="stylesheet" href="dark-mode.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="topbar.css" />
+    <link rel="stylesheet" href="layout.css" />
+</head>
+<body>
+    <div class="top-bar">
+        <div class="top-left">
+            <img src="logo_uma_branco.png" alt="Logo UMA" />
+            <h1>InfoAlunos - Serviço de Informação dos Alunos</h1>
+        </div>
+        <div class="user-options">
+            <a href="#">O meu correio</a>
+            <a href="#">O meu horário</a>
+            <a href="#">Matrículas/Inscrições</a>
+        </div>    
+        <div class="user-photo"></div>
+    </div>
+    <input type="checkbox" id="menu-toggle" hidden>
+    <label for="menu-toggle" class="menu-btn">☰ Menu</label>
+    <label for="menu-toggle" class="overlay"></label>
+    <div class="container">
+        <div class="sidebar">
+            <details>
+                <summary>Início</summary>
+            </details>
+            <details>
+                <summary>Geral</summary>
+                <ul>
+                    <li>Processos</li>
+                    <li>Dados pessoais</li>
+                    <li>Privacidade</li>
+                    <li>Ajuda</li>
+                </ul>
+            </details>
+            <details>
+                <summary>Serviços</summary>
+                <ul>
+                    <li>Pagamentos</li>
+                    <li>Matrículas/Inscrições</li>
+                    <li>Inscrição em turmas</li>
+                    <li>Requerimentos</li>
+                    <li>Cartão universitário</li>
+                    <li>SASUMa - Bolsas</li>
+                </ul>
+            </details>
+            <details>
+                <summary>Concursos</summary>
+                <ul>
+                    <li>Candidaturas</li>
+                </ul>
+            </details>
+            <details>
+                <summary>Avaliação</summary>
+                <ul>
+                    <li>Pautas</li>
+                    <li>Reclamação de nota</li>
+                    <li>Inquéritos</li>
+                    <li>Resultados de inquéritos</li>
+                    <li>Inquérito RAIDES</li>
+                </ul>
+            </details>
+            <details>
+                <summary>Creditações</summary>
+                <ul>
+                    <li>Lista de processos</li>
+                    <li>Novo processo</li>
+                </ul>
+            </details>
+            <details>
+                <summary>Documentos</summary>
+                <ul>
+                    <li>Académicos</li>
+                    <li>Declarações</li>
+                </ul>
+            </details>
+            <details>
+                <summary>Aula</summary>
+                <ul>
+                    <li>Calendário</li>
+                    <li>Sumários</li>
+                </ul>
+            </details>
+            <details>
+                <summary>Disciplina</summary>
+                <ul>
+                    <li>Ficha</li>
+                    <li>Programa</li>
+                    <li>Ficheiros</li>
+                </ul>
+            </details>
+            <details>
+                <summary>Curso</summary>
+                <ul>
+                    <li>Ficha curricular</li>
+                    <li>Horários</li>
+                    <li>Histórico de matrículas/inscrições</li>
+                    <li>Histórico de disciplinas aprovadas</li>
+                    <li>Transição para Bolonha</li>
+                    <li>Plano de conclusão</li>
+                    <li>Quadro de prescrição</li>
+                    <li>Atividades académicas do aluno</li>
+                </ul>
+            </details>
+            <details>
+                <summary>Instituição</summary>
+                <ul>
+                    <li>Estrutura orgânica</li>
+                </ul>
+            </details>
+        </div>
+        <div class="main">
+            <div class="row">
+                <div class="box">
+                    <div>
+                        <h2>Filtrar pagamentos</h2>
+                        <label>Ano Letivo</label>
+                                <select class="input-sólido">
+                                    <option value="" disabled selected>Escolha uma opção</option>
+                                    <option value="opcao1">2025/26</option>
+                                </select>
+                    </div>
+                    <div>
+                        <label>Situação do pagamento</label>
+                                <select class="input-sólido">
+                                    <option value="" disabled selected>Escolha uma opção</option>
+                                    <option value="opcao1">Cancelado</option>
+                                    <option value="opcao2">Pagos</option>
+                                    <option value="opcao3">Por pagar</option>
+                                    <option value="opcao4">Reembolsos</option>
+                                    <option value="opcao5">Substituído por prestaçôes</option>
+                                </select>
+                    </div> 
+                    <button class="btn" style="width: 100%;">Pesquisar</button>       
+                </div>
+                
+                <div class="box">
+                    <h2>Total em dívida</h2>
+                    <h1 style="text-align: right; display: flex; justify-content: flex-end; align-items: center; height: 150px;">600 EUR</h1>
+                </div>
+            </div>
+            <div class="box">
+                <div class="scroll-table">
+                    
+                        <table>
+                            <tr>
+                                <th>AL</th>
+                                <th>B</th>
+                                <th>Refª MB</th>
+                                <th>Serviço</th>
+                                <th>Data de Emissão</th>
+                                <th>Data Limite</th>
+                                <th>Valor</th>
+                                <th>Pagar c/ cartão de crédito</th>
+                            </tr>
+                            <tr>
+                                <td>2025/26</td>
+                                <td>S</td>
+                                <td>212222504</td>
+                                <td>1ª Prestação de Propinas de CET's</td>
+                                <td>2025-09-30</td>
+                                <td>2025-12-31</td>
+                                <td>77.44 EUR</td>
+                                <td style="text-align: center; vertical-align: middle;"><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>2025/26</td>
+                                <td>S</td>
+                                <td>212222505</td>
+                                <td>2ª Prestação de Propinas de CET's</td>
+                                <td>2025-09-30</td>
+                                <td>2025-01-31</td>
+                                <td>77.44 EUR</td>
+                                <td style="text-align: center; vertical-align: middle;"><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>2025/26</td>
+                                <td>S</td>
+                                <td>212222506</td>
+                                <td>3ª Prestação de Propinas de CET's</td>
+                                <td>2025-09-30</td>
+                                <td>2026-02-28</td>
+                                <td>77.44 EUR</td>
+                                <td style="text-align: center; vertical-align: middle;"><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>2025/26</td>
+                                <td>S</td>
+                                <td>212222507</td>
+                                <td>4ª Prestação de Propinas de CET's</td>
+                                <td>2025-09-30</td>
+                                <td>2026-03-31</td>
+                                <td>77.44 EUR</td>
+                                <td style="text-align: center; vertical-align: middle;"><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>2025/26</td>
+                                <td>S</td>
+                                <td>212222508</td>
+                                <td>5ª Prestação de Propinas de CET's</td>
+                                <td>2025-09-30</td>
+                                <td>2026-04-30</td>
+                                <td>77.44 EUR</td>
+                                <td style="text-align: center; vertical-align: middle;"><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>2025/26</td>
+                                <td>S</td>
+                                <td>212222509</td>
+                                <td>6ª Prestação de Propinas de CET's</td>
+                                <td>2025-09-30</td>
+                                <td>2026-05-31</td>
+                                <td>77.44 EUR</td>
+                                <td style="text-align: center; vertical-align: middle;"><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>2025/26</td>
+                                <td>S</td>
+                                <td>212222510</td>
+                                <td>7ª Prestação de Propinas de CET's</td>
+                                <td>2025-09-30</td>
+                                <td>2026-06-30</td>
+                                <td>77.44 EUR</td>
+                                <td style="text-align: center; vertical-align: middle;"><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>2025/26</td>
+                                <td>S</td>
+                                <td>212222511</td>
+                                <td>8ª Prestação de Propinas de CET's</td>
+                                <td>2025-09-30</td>
+                                <td>2026-07-31</td>
+                                <td>77.44 EUR</td>
+                                <td style="text-align: center; vertical-align: middle;"><input type="checkbox"></td>
+                            </tr>
+                        </table>
+                 </div>
+            </div>
+            <div class="row">
+                <div class="box" style="margin-top: 18px;">
+                    <div class="text">
+                        <p><strong>Opção 1 - Pagamento via Multibanco - Pagamento de Serviços</strong></p>
+                        <p>Através da SIBS, pode proceder aos pagamentos utilizando as referências listadas. Quer seja por Multibanco ou através de <em>homebanking.</em></p>
+                        <p>
+                            <strong>Processamento de Transações –
+                                <span style="color: #c0392b;">NÃO IMEDIATO</span>
+                            </strong>
+                        </p>
+                            <ul>
+                                <li>Tem de efectuar um pagamento de cada vez.</li>
+                                <li>O processamento é efectuado pelo sistema todos os dias pelas 22h00, pelo que só depois de efectuado este processamento o InfoAlunos reflectirá a conta-corrente actual do Aluno.</li>
+                            </ul>
+                        <p><strong>Processo de Pagamento</strong></p>
+                            <ul>
+                                <li>No Multibanco ou homebanking, seleccione "Pagamento de Serviços".</li>
+                                <li>Como Entidade introduza <strong>20697</strong>, como referência, utilize a Refª MB acima listada.</li>
+                            </ul>
+                        <p><strong>Atenção - Data Limite de Pagamento Ultrapassada</strong></p>
+                        <p>Se for <strong> ultrapassada a data </strong> limite de pagamento serão aplicados <strong> juros de mora à taxa legal em vigor.
+                        Depois do pagamento</strong>, e de forma automática, é criado um <strong>novo  registo para pagamento</strong> com o valor dos juros de mora calculados.</p>
+                    </div>
+                </div>
+                <div class="box" style="margin-top: 18px;">
+                    <div class="text">
+                        <p><strong>Opção 2 - Pagamento via Cartão de Crédito</strong></p>
+                        <p>Através da REDUNICRE, pode proceder aos pagamentos via Cartão de Crédito. Se quiser pode gerar um MBNet para usar esta modalidade.</p>
+                        <p>
+                            <strong>Processamento de Transações –
+                                <span style="color: #c0392b;">IMEDIATO</span>
+                            </strong>
+                        </p>
+                        <ul>
+                            <li>Pode pagar vários produtos de uma vez só.</li>
+                            <li>Ao regressar ao InfoAlunos, terá imediatamente os seus dados actualizados.</li>
+                        </ul>
+                        <p><strong>Processo de Pagamento</strong></p>
+                        <ul>
+                            <li>Na tabela desta página, clique nas linhas correspondentes, a coluna "Pagar via Cartão de Crédito".</li>
+                            <li>Clique no botão "Iniciar Pagamento".</li>
+                        </ul>
+                        <p><strong>Atenção - Data Limite de Pagamento Ultrapassada</strong></p>
+                        <p>Se for <strong>ultrapassada a data</strong> limite de pagamento serão aplicados <strong> juros de mora à taxa legal em vigor.</strong>
+                            <strong>Depois do pagamento,</strong> e de forma automática, é criado um <strong> novo registo para pagamento</strong> com o valor dos juros de mora calculados.</p>
+                    
+                    </div>   
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
