@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InfoAlunos - Página Inicial</title>
+    <link rel="stylesheet" href="dark-mode.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="topbar.css" />
+    <link rel="stylesheet" href="layout.css" />
+</head>
+<body>
+    <div class="top-bar">
+        <div class="top-left">
+            <img src="logo_uma_branco.png" alt="Logo UMA" />
+            <h1>InfoAlunos - Serviço de Informação dos Alunos</h1>
+        </div>
+        <div class="user-options">
+            <a href="#">O meu correio</a>
+            <a href="#">O meu horário</a>
+            <a href="#">Matrículas/Inscrições</a>
+        </div>    
+        <div class="user-photo"></div>
+    </div>
+    <input type="checkbox" id="menu-toggle" hidden>
+    <label for="menu-toggle" class="menu-btn">☰ Menu</label>
+    <label for="menu-toggle" class="overlay"></label>
+    <div class="container">
+        <div class="sidebar">
+            <details>
+                <summary>Início</summary>
+            </details>
+            <details>
+                <summary>Geral</summary>
+                <ul>
+                    <li>Processos</li>
+                    <li>Dados pessoais</li>
+                    <li>Privacidade</li>
+                    <li>Ajuda</li>
+                </ul>
+            </details>
+            <details>
+                <summary>Serviços</summary>
+                <ul>
+                    <li>Pagamentos</li>
+                    <li>Matrículas/Inscrições</li>
+                    <li>Inscrição em turmas</li>
+                    <li>Requerimentos</li>
+                    <li>Cartão universitário</li>
+                    <li>SASUMa - Bolsas</li>
+                </ul>
+            </details>
+            <details>
+                <summary>Concursos</summary>
+                <ul>
+                    <li>Candidaturas</li>
+                </ul>
+            </details>
+            <details>
+                <summary>Avaliação</summary>
+                <ul>
+                    <li>Pautas</li>
+                    <li>Reclamação de nota</li>
+                    <li>Inquéritos</li>
+                    <li>Resultados de inquéritos</li>
+                    <li>Inquérito RAIDES</li>
+                </ul>
+            </details>
+            <details>
+                <summary>Creditações</summary>
+                <ul>
+                    <li>Lista de processos</li>
+                    <li>Novo processo</li>
+                </ul>
+            </details>
+            <details>
+                <summary>Documentos</summary>
+                <ul>
+                    <li>Académicos</li>
+                    <li>Declarações</li>
+                </ul>
+            </details>
+            <details>
+                <summary>Aula</summary>
+                <ul>
+                    <li>Calendário</li>
+                    <li>Sumários</li>
+                </ul>
+            </details>
+            <details>
+                <summary>Disciplina</summary>
+                <ul>
+                    <li>Ficha</li>
+                    <li>Programa</li>
+                    <li>Ficheiros</li>
+                </ul>
+            </details>
+            <details>
+                <summary>Curso</summary>
+                <ul>
+                    <li>Ficha curricular</li>
+                    <li>Horários</li>
+                    <li>Histórico de matrículas/inscrições</li>
+                    <li>Histórico de disciplinas aprovadas</li>
+                    <li>Transição para Bolonha</li>
+                    <li>Plano de conclusão</li>
+                    <li>Quadro de prescrição</li>
+                    <li>Atividades académicas do aluno</li>
+                </ul>
+            </details>
+            <details>
+                <summary>Instituição</summary>
+                <ul>
+                    <li>Estrutura orgânica</li>
+                </ul>
+            </details>
+        </div>
+        <div class="main">
+            <div class="row">
+                <div class="box">
+                    <div>
+                        <p style="margin: 0; font-size: 14px;"><strong>Contactos</strong></p>
+                        <h2 style="margin-top: 10px;">Reitoria da Universidade da Madeira</h2>
+                    </div>
+                    <div class="text">
+                        <p>Colégio dos Jesuítas - Rua dos Ferreiros</p>
+                        <p>9000-082 Funchal - Portugal</p>
+                        <p>Tel:(+351) 291209400</p>
+                        <p>Email: <a href="mailto:gabinete@reitoria.uma.pt">gabinete@reitoria.uma.pt</a></p>
+                    </div>
+                    <div>
+                        <h2 style="margin-top: 10px;">Campus da Universidade da Penteada</h2>
+                    </div>
+                    <div class="text">
+                        <p>Caminho da Penteada 9020-105 Funchal</p>
+                        <p>Tel: (+351) 291705000</p>
+                    </div>
+                    <div>
+                        <h2 style="margin-top: 10px;">Gabinete de Apoio ao Estudante</h2>
+                    </div>
+                    <div class="text">
+                        <p>Campus Universitário da Penteada</p>
+                        <p>9020-105 Funchal</p>
+                        <p>Tel: (+351) 291705270</p>
+                        <p>URL: <a href="https://www.uma.pt/sobre/servico-apoio-estudantes/gabinete-de-apoio-ao-estudante/" target="_blank">https://www.uma.pt/sobre/servico-apoio-estudantes/gabinete-de-apoio-ao-estudante/</a></p>
+                        <p>Email: <a href="mailto:apoio.estudante@mail.uma.pt">apoio.estudante@mail.uma.pt</a></p>
+                    </div>  
+                </div>
+                <div class="box">
+                    <div>
+                        <div class="">
+                            <label>Para:</label>
+                            <select class="input-sólido">
+                                <option value="" disabled selected>Escolha uma opção</option>
+                                <option value="opcao1">Gabinete de Apoio ao Estudante</option>
+                            </select>
+
+                            <label>Nome:</label>
+                            <input type="text" class="input-sólido" placeholder="O seu nome">
+
+                            <label>E-mail:</label>
+                            <input type="email" class="input-sólido" placeholder="exemplo@email.com">
+
+                            <label>Assunto:</label>
+                            <input type="text" class="input-sólido" placeholder="Assunto da mensagem">
+                        </div>
+                    
+                        <div>
+                            <label>Mensagem:</label>
+                            <textarea class="input-sólido" rows="5" placeholder="Escreva a sua mensagem" style="font-family: Arial, Helvetica, sans-serif;"></textarea>
+                        </div>
+                        <div>
+                            <button class="btn" style="width: 100%;">Enviar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
