@@ -130,12 +130,36 @@ body {
 .box-content{
     display: flex;
     justify-content: space-between; 
+    color: --var(--text);
 }
 
 .box-color {
     background-color: #EEEEEE;
     border-radius: 5px;
     padding: 10px 20px;
+}
+
+.text {
+    margin: 0 30px;
+    max-width: 1100px;
+    font-size: 13px;
+}
+
+.btn {
+    cursor: pointer;    
+    font-size: 14px;
+    color: #fff;
+    background: var(--primary);
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin:16px 0;
+    border: 2px solid var(--border);
+    margin-top: ;
+}
+
+.btn:hover {
+    background: #005a99;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .scroll-table {
@@ -163,3 +187,24 @@ table th {
 }
 
 
+
+.input-sólido {
+  padding: 10px 16px;
+  width: 100%;
+  margin-bottom: 15px;
+  font-size: 16px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background-color: var(--surface);
+  color: var(--text);             
+  transition: 0.3s;
+}
+
+.input-sólido::placeholder {
+  color: var(--text);
+}
+
+.input-sólido:focus {
+  outline: none;
+  background-color: var(--surface2);
+}
