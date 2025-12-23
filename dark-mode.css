@@ -5,6 +5,8 @@
     --border: #ccc;
     --primary: #0075B2;
     --table-header: #ddd;
+    --box: #FCF8E3;
+    --border-box:#F0AD4E;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -14,6 +16,8 @@
         --surface2: #1f1d1d;
         --border: #ffffff;
         --primary:#004080;
-        --table-header: #1f1d1d;  
+        --table-header: #1f1d1d; 
+        --box: #1F1D1D;
+        --border-box:#F0AD4E;
     }
 }
